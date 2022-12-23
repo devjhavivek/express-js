@@ -1,11 +1,7 @@
 dirname="node_modules"
 if [ -d "$dirname" ]
 then
-   datapm2=$(pm2 id Vivek)
-   for index in $datapm2;
-   do
-   echo $index;
-   pm2 restart $index;
+   pm2 restart Vivek;
    done
 else
    npm install
