@@ -1,6 +1,5 @@
 dirname="node_modules"
 if [ -d "$dirname" ]
-then
    pm2 restart Vivek;
    done
 else
