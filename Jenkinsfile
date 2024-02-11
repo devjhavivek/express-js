@@ -3,7 +3,7 @@ agent { label 'shailendra' }
 stages{
 stage('Checkout'){
 steps{
-git url: 'https://github.com/devjhavivek/express-js.git', branch: 'main'
+git branch: 'main', credentialsId:'github', url: 'https://github.com/devjhavivek/express-js.git', 
  }
 }
 
