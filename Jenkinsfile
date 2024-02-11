@@ -5,9 +5,7 @@ pipeline {
   stages {
     stage('Checkout') 
     {
-      steps {
         git branch: 'main', credentialsId: 'github', url: 'https://github.com/devjhavivek/express-js.git',
-      }
     }
     stage('Build') 
     {
