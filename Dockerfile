@@ -1,9 +1,20 @@
-FROM node:10-alpine
-RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
-WORKDIR /home/node/app
+# Use the official Node.js image as the base image
+FROM node:latest
+
+# Set the working directory in the container
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json (if available)
 COPY package*.json ./
-USER node
+
+# Install dependencies
 RUN npm install
-COPY --chown=node:node . .
+
+# Copy the rest of your application code
+COPY . .
+
+# Expose port 3000
 EXPOSE 3000
-CMD [ "node", "index.js" ]
+
+# Command to run your application
+CMD ["node", "index.js"]
